@@ -1,4 +1,4 @@
-package org.medellinjug.mastering_java.item1_eliminar_uso_innecesario_excepciones_capturadas;
+package org.medellinjug.mastering_java.avoid_checked_exceptions;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
