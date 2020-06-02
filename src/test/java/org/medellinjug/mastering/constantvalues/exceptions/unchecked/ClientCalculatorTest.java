@@ -1,4 +1,4 @@
-package org.medellinjug.mastering_java.avoid_checked_exceptions.unchecked;
+package org.medellinjug.mastering.constantvalues.exceptions.unchecked;
 
 import org.junit.jupiter.api.Test;
 
