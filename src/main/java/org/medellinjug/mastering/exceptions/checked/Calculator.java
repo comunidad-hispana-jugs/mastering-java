@@ -1,4 +1,4 @@
-package org.medellinjug.mastering.constantvalues.exceptions.checked;
+package org.medellinjug.mastering.exceptions.checked;
 
 public class Calculator {
     public Integer sum(Integer a, Integer b) throws InvalidArgumentsException {
