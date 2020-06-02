@@ -1,4 +1,4 @@
-package org.medellinjug.mastering.constantvalues.exceptions.unchecked;
+package org.medellinjug.mastering_java.avoid_checked_exceptions.unchecked;
 
 import java.util.Objects;
 

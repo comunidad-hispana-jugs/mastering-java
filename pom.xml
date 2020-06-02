@@ -8,6 +8,9 @@
     <artifactId>mastering-java</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>item1-eliminar-uso-innecesario-excepciones-capturadas</module>
+    </modules>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

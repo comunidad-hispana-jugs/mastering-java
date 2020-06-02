@@ -1,4 +1,4 @@
-package org.medellinjug.mastering.constantvalues.exceptions.unchecked;
+package org.medellinjug.mastering_java.avoid_checked_exceptions.checked;
 
 import java.util.List;
 
@@ -9,9 +9,9 @@ public class ClientCalculator {
         calculator = new Calculator();
     }
 
-    public Double average(List<Integer> numbers) {
+    public Double average(List<Integer> numbers) throws InvalidArgumentsException {
         if (numbers == null) {
-            throw new IllegalArgumentException("Wrong arguments");
+            throw new InvalidArgumentsException("Wrong arguments");
         }
 
         Integer total = 0;
