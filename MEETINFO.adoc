@@ -1,0 +1,12 @@
+## Instrucciones
+Gracias por atender esta sesión. Por favor lea las siguientes instrucciones 😃
+
+- Sí tiene alguna *_duda_* o *_comentario_* *_puede interrumpir_* cuando lo considere neecesario, nuestro objetivo es realizar *_sesiones interactivas_*.
+- Mantén la *_Webcam activada_*, esto a permitirá speakers, organizadores y asistentes *_sentir cercanía_* en tiempos de distanciamiento social
+
+#### Que estamos haciendo?
+
+Hemos preparado una serie de *_sesiones_* de *_1 hora_*, desarrolladores con experiencia nos presentarán *_alternativas_* para abarcar diferentes
+problemas usando tenologías *_Java_*.
+
+En esta sesión conjunta entre las comunidades de *_Ecuador_*, *_Republica Dominicana_* y *_Medellin_* se planea hablar de: *_Excepciones_*, *_Genericos y Raw Types_*, *_Constantes y Enumeraciones_*.
