@@ -1,4 +1,4 @@
-package org.medellinjug.mastering.constantvalues.exceptions.unchecked;
+package org.medellinjug.mastering.exceptions.checked;
 
 import org.junit.jupiter.api.Test;
 
@@ -11,21 +11,21 @@ class ClientCalculatorTest {
     private ClientCalculator clientCalculator = new ClientCalculator();
 
     @Test
-    void average() {
-        Double average = clientCalculator.average(List.of(10, 20, 60, 70));
-
-        assertEquals(40.0, average);
-    }
-
-    @Test
-    void average_catch() {
+    void average_tryCatch() {
         try {
-            Double average = clientCalculator.average(null);
+            Double average = clientCalculator.average(List.of(10, 20, 60, 70));
 
             assertEquals(40.0, average);
-        }catch (IllegalArgumentException e){
+        } catch (InvalidArgumentsException e) {
             e.printStackTrace();
             fail();
         }
+    }
+
+    @Test
+    void average_throws() throws InvalidArgumentsException {
+        Double average = clientCalculator.average(List.of(10, 20, 60, 70));
+
+        assertEquals(40.0, average);
     }
 }
