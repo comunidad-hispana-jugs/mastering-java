@@ -22,7 +22,7 @@ class ShoppingCartWithGenericsTest {
 
 	@Test
 	void testAddItem() {	
-		
+//		cart.addItem("Shirt"); This will give compilation error as :: The method addItem(Item) in the type ShoppingCartWithGenerics is not applicable for the arguments (String)
 	}
 
 	@Test

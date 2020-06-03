@@ -42,7 +42,7 @@ class ShoppingCartTest {
 	void testExpectedException() {
 
 		Assertions.assertThrows(ClassCastException.class, () -> {
-			cart.addItem("Shirt");
+			cart.addItem("Shirt"); //This will give ClassCastException
 
 			for (Iterator i = cart.getItems().iterator(); i.hasNext();) {
 				Item item = (Item) i.next();

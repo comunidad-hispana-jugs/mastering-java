@@ -1,11 +1,11 @@
 package org.medellinjug.mastering.exceptions.unchecked;
 
-import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.fail;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 class ClientCalculatorTest {
     private ClientCalculator clientCalculator = new ClientCalculator();
@@ -19,13 +19,12 @@ class ClientCalculatorTest {
 
     @Test
     void average_catch() {
-        try {
-            Double average = clientCalculator.average(null);
+    	
+    	Assertions.assertThrows(IllegalArgumentException.class, () -> {
+       
+            Double average = clientCalculator.average(null); //This will give IllegalArgumentException
 
             assertEquals(40.0, average);
-        }catch (IllegalArgumentException e){
-            e.printStackTrace();
-            fail();
-        }
+    	});
     }
 }
