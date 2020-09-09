@@ -1,6 +1,7 @@
 package org.medellinjug.mastering.returning;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -65,7 +66,7 @@ public class PetsRepoImpl implements PetsRepo {
 
     @Override
     public List<Pet> getAll() {
-        return petsDB;
+        return Collections.unmodifiableList(petsDB);
     }
 
     @Override
@@ -75,15 +76,19 @@ public class PetsRepoImpl implements PetsRepo {
 
     @Override
     public List<Pet> filter(PetType type) {
-        return petsDB.stream()
+        return Collections.unmodifiableList(
+                petsDB.stream()
                 .filter(p -> p != null && p.getType() == type)
-                .collect(Collectors.toList());
+                .collect(Collectors.toList())
+        );
     }
 
     @Override
     public List<Pet> filter(String breed) {
-        return petsDB.stream()
+        return Collections.unmodifiableList(
+                petsDB.stream()
                 .filter(p -> p != null && p.getBreed().equals(breed))
-                .collect(Collectors.toList());
+                .collect(Collectors.toList())
+        );
     }
 }

@@ -2,6 +2,7 @@ package org.medellinjug.mastering.returning;
 
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class DogService {
 
@@ -12,11 +13,11 @@ public class DogService {
     }
 
     public List<Dog> getAllDogsAsDogList() {
-        List<Pet> pets = petsRepo.filter(PetType.DOG);
+        final List<Pet> pets = petsRepo.filter(PetType.DOG);
         if (pets.isEmpty()) {
             return Collections.emptyList(); // what if we return null???
         }
-        List<Dog> dogs = new ArrayList<>();
+        final List<Dog> dogs = new ArrayList<>();
         for (Pet pet : pets) {
             dogs.add((Dog)pet);
         }
@@ -63,7 +64,7 @@ public class DogService {
     }
 
     public double totalCostOfAllDogs(Double totalCost) { // Pass output parameter as reference
-        List<Dog> dogs = getAllDogsAsDogList();
+        final List<Dog> dogs = getAllDogsAsDogList();
         for (Dog dog : dogs) {
             totalCost += dog.getCost();
         }
@@ -74,12 +75,16 @@ public class DogService {
         if (getAllDogsAsDogList().contains(dog)) {
             return dog.getBreed();
         }
-        return "dog not found"; // throw new IllegalArgumentException("Breed name couldn't be obtained: Input dog is not found");
+        throw new IllegalArgumentException("Breed name couldn't be obtained: Input dog is not found");
     }
 
     public boolean removeAllDogsThatAreCats() { // returning a boolean value to determine if any cats are removed
         List<Pet> dogs = petsRepo.getAll();
-        return dogs.removeIf(dog -> dog.getType().equals(PetType.CAT));
+        List<Pet> toDelete =dogs.stream().filter(pet ->
+                (pet instanceof Dog) && pet.getType().equals(PetType.CAT)
+        ).collect(Collectors.toList());
+        toDelete.forEach(pet -> petsRepo.deletePet(pet));
+        return !toDelete.isEmpty();
     }
 
 }
