@@ -1,4 +1,4 @@
-package org.latamjugs.mastering.objetosmutables;
+package org.latamjugs.mastering.mutableobjects;
 
 import java.util.logging.Logger;
 

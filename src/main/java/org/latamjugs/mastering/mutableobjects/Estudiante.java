@@ -1,4 +1,4 @@
-package org.latamjugs.mastering.objetosmutables;
+package org.latamjugs.mastering.mutableobjects;
 
 public final class Estudiante {
     //no debe tener SET
